@@ -9,9 +9,6 @@ import CustomTabPanel from "../component/CustomTabPanel";
 import ControlPointIcon from '@mui/icons-material/ControlPoint';
 import AddLocationModal from "../component/AddLocationModal";
 
-
-
-
 function a11yProps(index: number) {
   return {
     id: `simple-tab-${index}`,
@@ -19,9 +16,7 @@ function a11yProps(index: number) {
   };
 }
 
-
 const Home = () => {
-  const [tabIndex, setTabIndex] = useState(0);
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -29,26 +24,29 @@ const Home = () => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
+
   return (
     <div className={styles.container}>
       <div className={styles.mainClass}>
         <div className={styles.text}>Inventory</div>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider',
-        width:"100%",display:"flex",justifyContent:"space-between" ,alignItems:"center"  }}>
+        <Box sx={{
+          borderBottom: 1, borderColor: 'divider',
+          width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center"
+        }}>
           <Tabs value={value} TabIndicatorProps={{
-    style: {
-      backgroundColor: "purple"
-    }
-    
-  }} onChange={handleChange} aria-label="basic tabs example">
-            <Tab  label="Location" {...a11yProps(0)} />
+            style: {
+              backgroundColor: "purple"
+            }
+
+          }} onChange={handleChange} aria-label="basic tabs example">
+            <Tab label="Location" {...a11yProps(0)} />
             <Tab label="Comapnies" {...a11yProps(1)} />
             <Tab label="User" {...a11yProps(2)} />
           </Tabs>
         </Box>
-          <ControlPointIcon   sx={{position:'relative',left:"88%",top:'2%' , cursor:"pointer"}} onClick={handleOpen}  fontSize="large"/>
+        <ControlPointIcon sx={{ position: 'relative', left: "88%", top: '2%', cursor: "pointer" }} onClick={handleOpen} fontSize="large" />
         <CustomTabPanel value={value} index={0}>
-          <LocationList/>
+          <LocationList />
         </CustomTabPanel>
         <CustomTabPanel value={value} index={1}>
           Item Two
@@ -56,17 +54,7 @@ const Home = () => {
         <CustomTabPanel value={value} index={2}>
           Item Three
         </CustomTabPanel>
-        {/* <Tabs defaultActiveKey="location" id="tabs">
-        <Tab eventKey="location" title="location">
-          <span className={styles.text}>Location</span>
-        </Tab>
-        <Tab eventKey="companies" title="companies">
-          <span className={styles.text}>Companies</span>
-        </Tab>
-         </Tabs>
-       */}
-           <AddLocationModal open={open} handleClose={handleClose}/>
-
+        <AddLocationModal open={open} handleClose={handleClose} />
       </div>
     </div>
   )

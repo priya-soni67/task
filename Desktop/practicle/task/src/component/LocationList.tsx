@@ -41,8 +41,7 @@ const LocationList = () => {
           ))}
         </TableBody>
       </Table>
-    </TableContainer>
-        
+    </TableContainer> 
     </div>
   );
 };
