@@ -17,6 +17,7 @@ function a11yProps(index: number) {
 }
 
 const Home = () => {
+  const [tabIndex, setTabIndex] = useState(0);
   const [value, setValue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -24,7 +25,6 @@ const Home = () => {
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
-
   return (
     <div className={styles.container}>
       <div className={styles.mainClass}>

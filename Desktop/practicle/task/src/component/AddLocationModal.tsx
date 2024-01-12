@@ -71,7 +71,6 @@ const AddLocationModal = ({ open, handleClose }: PropTypes) => {
       }
     },
   });
-
   useEffect(() => {
     if (formik.values.region) {
       axios.get(`https://restcountries.com/v3.1/region/${formik.values.region}`)
@@ -171,7 +170,6 @@ const AddLocationModal = ({ open, handleClose }: PropTypes) => {
           </form>
         </Box>
       </Container>
-
     </Modal>
   );
 };

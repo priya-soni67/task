@@ -2,14 +2,14 @@ import React from 'react';
 import Box from '@mui/material/Box';
 
 interface TabPanelProps {
-    children?: React.ReactNode;
-    index: number;
-    value: number;
-  }
+  children?: React.ReactNode;
+  index: number;
+  value: number;
+}
 
-const CustomTabPanel = (props:TabPanelProps) => {
+const CustomTabPanel = (props: TabPanelProps) => {
 
- const { children, value, index, ...other } = props;
+  const { children, value, index, ...other } = props;
 
   return (
     <div
