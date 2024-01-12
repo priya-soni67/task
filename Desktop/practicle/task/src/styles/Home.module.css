@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    width: 100vw;
+
+    /* margin-left: 350px; */
+    /* margin-top: 230px; */
+}
+.mainClass{
+    display: flex;
+    height: 80%;
+    width: 50%;
+    margin-left: 25%;
+    border: 3px solid #dcdcdc;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.text {
+    font-size: 20px;
+    margin: 20px;
+    
+}
